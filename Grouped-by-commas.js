@@ -31,3 +31,22 @@ function groupByCommas(n) {
 }
 
 // or
+
+function groupByCommas(n) {
+  let s = n.toString(),
+      r = [];
+  
+  // reverse number string so we can easily count up in blocks of 3
+  s = reverse(s);
+  
+  for (let i = 0, l = s.length; i < l; i += 3) {
+    r.push(s.substr(i, 3));
+  }
+  
+  // combine the groups of 3 numbers into string, then reverse back to original order
+  return reverse(r.join(','));
+}
+
+function reverse(s) {
+  return s.split('').reverse().join('');
+}
