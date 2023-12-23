@@ -18,3 +18,14 @@ Examples:
 
 
 // Solution
+
+function groupByCommas(n) {
+  let output = '';
+  n = n.toString().split('').reverse().join('');
+  for (i = 0; i < n.length; i++) {
+    if (i % 3 === 0 && i != 0) output += ',';
+    output += n[i];
+    console.log(output);
+  }
+  return output.split('').reverse().join('');
+}
